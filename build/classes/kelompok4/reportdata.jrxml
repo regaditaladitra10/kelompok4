@@ -28,7 +28,7 @@
 				<textElement>
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[REPORT JADWAL MATA KULIAH]]></text>
+				<text><![CDATA[DATA JADWAL MATA KULIAH]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -71,7 +71,7 @@
 					<rightPen lineWidth="0.25"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Mata Kuliah]]></text>
+				<text><![CDATA[Nama Mata Kuliah]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="392" y="41" width="130" height="20" uuid="9d3759be-5e07-4f4c-87fb-d2d37c7137c0"/>

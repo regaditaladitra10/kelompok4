@@ -81,14 +81,10 @@ public class view extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Table);
         if (Table.getColumnModel().getColumnCount() > 0) {
             Table.getColumnModel().getColumn(0).setMaxWidth(20);
-            Table.getColumnModel().getColumn(0).setHeaderValue("ID");
-            Table.getColumnModel().getColumn(1).setHeaderValue("Nama Mata Kuliah");
-            Table.getColumnModel().getColumn(2).setHeaderValue("Jam Mata Kuliah");
-            Table.getColumnModel().getColumn(3).setHeaderValue("Kelas");
         }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("JADWAL MATA KULIAH UNIKU");
+        jLabel1.setText("JADWAL MATA KULIAH");
 
         jLabel2.setText("Nama Mata Kuliah");
 
@@ -112,7 +108,7 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Ruang Kelas");
+        jLabel4.setText("Kelas");
 
         submit.setText("Create");
         submit.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +151,7 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Search By ID");
+        jLabel5.setText("Cari ID");
 
         back.setText("Back");
         back.addActionListener(new java.awt.event.ActionListener() {
@@ -207,20 +203,21 @@ public class view extends javax.swing.JFrame {
                                     .addComponent(jam, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3)
                                     .addComponent(matkul, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(30, Short.MAX_VALUE))))
+                        .addContainerGap())))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(290, 290, 290)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(45, 45, 45)
+                        .addGap(101, 101, 101)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(matkul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,7 +229,11 @@ public class view extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(kelas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel1)
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(submit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -241,9 +242,9 @@ public class view extends javax.swing.JFrame {
                     .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(back)
                     .addComponent(print))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(7, 7, 7)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -289,7 +290,7 @@ public class view extends javax.swing.JFrame {
           
           Connection con = DriverManager.getConnection(url, user, password);
           Statement st = con.createStatement();
-     DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Nama Mata Matkul","Jam Mata Kuliah","Kelas"}, 0);
+     DefaultTableModel model = new DefaultTableModel(new String[]{"ID", "Nama Mata Kuliah","Jam Mata Kuliah","Kelas"}, 0);
              
       Table.setModel(model);
       String sql = "SELECT `id`, `mata_kuliah`, `jam_mata_kuliah`, `kelas` FROM `java_users_db`.`mata_kuliah`";
@@ -498,7 +499,7 @@ public class view extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-                    new Navigasi().setVisible(true);
+                    new navigasimenu().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
